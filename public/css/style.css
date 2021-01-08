@@ -1,6 +1,43 @@
 body {
-    background-color: red;
+    background-color: cornsilk;
+}
+
+main {
+    padding-top: 100px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: white;
     width: 70%;
     margin-left: auto;
     margin-right: auto;
+}
+
+header {
+    position: absolute;
+    padding: 10px;
+    background-color: #007bff;
+    width: 100%;
+    color: white;
+}
+
+header * {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.multibutton * {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.form {
+    border: none !important;
+    table-layout: fixed;
+}
+
+.form td {
+    width: 70px;
 }

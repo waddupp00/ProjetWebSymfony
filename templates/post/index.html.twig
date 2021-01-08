@@ -3,13 +3,13 @@
 {% block title %}Liste des posts{% endblock %}
 
 {% block stylesheets %}
-        <link href="{{ asset('public/css/style.css') }}" rel="stylesheet">
 {% endblock %}
 
 {% block body %}
     <h1>Liste des posts</h1>
     <br/>
-    <a class="card-link btn btn-outline-primary" href="{{ path('post_new') }}">Nouveau post</a>
+    <a class="btn btn-outline-primary" href="{{ path('post_new') }}">Nouveau post</a>
+    <br/>
     <br/>
     {% for post in posts %}
     <div class="card">

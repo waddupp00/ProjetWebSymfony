@@ -1,4 +1,16 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    <table class="form">
+        <tbody>
+            <tr>
+                <td>{{ form_label(form.title,'Titre') }}</td>
+                <td>{{ form_widget(form.title) }}</td>
+            </tr>
+            <tr>
+                <td>{{ form_label(form.content,'Contenu') }}</td>
+                <td>{{ form_widget(form.content) }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
     <button class="btn btn-success">{{ button_label|default('Sauvegarder') }}</button>
 {{ form_end(form) }}

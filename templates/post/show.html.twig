@@ -9,7 +9,9 @@
     <br/>
     <p>{{ post.content }}</p>
     <br/>
-    <a class="btn btn-primary" href="{{ path('post_index') }}">Retour à la liste</a>
-    <a class="btn btn-outline-primary"href="{{ path('post_edit', {'id': post.id}) }}">Editer le post</a>
-    {{ include('post/_delete_form.html.twig') }}
+    <div class="multibutton">
+        <a class="btn btn-primary" href="{{ path('post_index') }}">Retour à la liste</a>
+        <a class="btn btn-outline-primary"href="{{ path('post_edit', {'id': post.id}) }}">Editer le post</a>
+        {{ include('post/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
