@@ -8,19 +8,23 @@
 {% block body %}
     <h1>Liste des posts</h1>
     <br/>
+    {% if is_granted('ROLE_USER') %}
     <a class="btn btn-outline-primary" href="{{ path('post_new') }}">Nouveau post</a>
+    {% endif %}
     <br/>
     <br/>
     {% for post in posts %}
     <div class="card">
         <div class="card-header">
-            <span class="posttitle">{{ post.title }}</span> {% if post.category is defined and post.category is not null %} <span class="badge rounded-pill bg-primary">{{ post.category }}</span> {% endif %}
+            {% if post.category is defined and post.category is not null %} <span class="badge rounded-pill bg-primary">{{ post.category }}</span> {% endif %}<span class="posttitle">{{ post.title }}</span>
         </div>
         <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted">Créé le {{post.created|date('d/m/Y')}} à {{post.created|date('H:i')}}</h6>
             <p class="card-text">{{ post.content }}</p>
             <a href="{{ path('post_show', {'id': post.id}) }}" class="card-link btn btn-primary">Voir le post</a>
+            {% if is_granted('ROLE_USER') %}
             <a href="{{ path('post_edit', {'id': post.id}) }}" class="card-link btn btn-outline-primary">Editer le post</a>
+            {% endif %}
         </div>
     </div>
     {% else %}
@@ -29,5 +33,7 @@
     </div>
     {% endfor %}
     <br/>
+    {% if is_granted('ROLE_USER') %}
     <a class="card-link btn btn-outline-primary" href="{{ path('post_new') }}">Nouveau post</a>
+    {% endif %}
 {% endblock %}

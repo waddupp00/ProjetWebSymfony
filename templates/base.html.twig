@@ -8,11 +8,18 @@
         {% block stylesheets %}
         {% endblock %}
     </head>
-    <header>
-        <h1>Mon blog</h1>
-        <a class="btn btn-light" href="{{ path('post_index') }}">Liste des posts</a>
-    </header>
     <body>
+        <header>
+            <h1>Mon blog</h1>
+            <a class="btn btn-light" href="{{ path('post_index') }}">Liste des posts</a>
+            <a class="btn btn-light" href="{{ path('category_index') }}">Liste des catégories</a>
+            {% if is_granted('ROLE_USER')==false %}
+            <a class="btn btn-warning" href="{{ path('app_register') }}">Inscription</a>
+            <a class="btn btn-success" href="{{ path('app_login') }}">Connexion</a>
+            {% else %}
+            <a class="btn btn-danger" href="{{ path('app_logout') }}">Deconnexion</a>
+            {% endif %}
+        </header>
         <main>
             {% block body %}{% endblock %}
             {% block javascripts %}{% endblock %}

@@ -39,12 +39,18 @@ header * {
 }
 
 .form {
+    width: 50%;
     border: none !important;
     table-layout: fixed;
 }
 
 .form td {
-    width: 70px;
+    width: 50%;
+}
+
+.form label {
+    display: block;
+    text-align: right;
 }
 
 .badge {
