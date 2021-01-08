@@ -3,7 +3,12 @@
 {% block title %}Inscription{% endblock %}
 
 {% block body %}
-    <div class="alert alert-danger" role="alert">TODO messages d'erreur</div>
+    {% if registrationForm.vars.valid == false %}
+        <div class="alert alert-danger" role="alert">
+            {{ form_errors(registrationForm.username) }}
+            {{ form_errors(registrationForm.plainPassword) }}
+        </div> 
+    {% endif %}
 
     <h1>Inscription</h1>
 
