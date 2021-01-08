@@ -13,7 +13,9 @@
     <br/>
     {% for post in posts %}
     <div class="card">
-        <h3 class="card-header">{{ post.title }}</h3>
+        <div class="card-header">
+            <span class="posttitle">{{ post.title }}</span> {% if post.category is defined and post.category is not null %} <span class="badge rounded-pill bg-primary">{{ post.category }}</span> {% endif %}
+        </div>
         <div class="card-body">
             <h6 class="card-subtitle mb-2 text-muted">Créé le {{post.created|date('d/m/Y')}} à {{post.created|date('H:i')}}</h6>
             <p class="card-text">{{ post.content }}</p>

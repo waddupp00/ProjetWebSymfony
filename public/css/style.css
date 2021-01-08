@@ -1,5 +1,5 @@
 body {
-    background-color: cornsilk;
+    background-color: lightblue;
 }
 
 main {
@@ -28,6 +28,11 @@ header * {
     vertical-align: middle;
 }
 
+.posttitle {
+    font-size: larger;
+    font-weight: 600;
+}
+
 .multibutton * {
     display: inline-block;
     vertical-align: middle;
@@ -40,4 +45,13 @@ header * {
 
 .form td {
     width: 70px;
+}
+
+.badge {
+    color: white !important;
+}
+
+.form input,
+.form select {
+    width: 100%;
 }
